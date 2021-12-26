@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
+if(UNIX AND NOT APPLE)
+	set(CMAKE_CXX_COMPILER g++-11)
+endif()
+
 project(CPPExperiments)
 
 set(CMAKE_CXX_STANDARD 20)

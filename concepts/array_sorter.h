@@ -8,7 +8,7 @@
 
 template<class T>
 concept Sortable = requires(T a, T b) {
-        { a < b } -> std::convertible_to<bool>;
+    { a < b } -> std::convertible_to<bool>;
 };
 
 template <Sortable T, int n>
