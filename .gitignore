@@ -532,3 +532,7 @@ FodyWeavers.xsd
 
 .vscode/
 
+gcm.cache
+
+*.swp
+

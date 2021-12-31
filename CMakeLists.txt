@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
+include(function.cmake)
+
 if(UNIX AND NOT APPLE)
 	set(CMAKE_CXX_COMPILER g++-11)
 endif()
@@ -15,4 +17,8 @@ set(CUSTOM_INCLUDES "")
 set(CMAKE_CXX_FLAGS "-Werror")
 
 add_subdirectory(concepts)
+add_subdirectory(3-way)
+add_subdirectory(coroutine)
+add_subdirectory(module)
+add_subdirectory(ranges)
 
