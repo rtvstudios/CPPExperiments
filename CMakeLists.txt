@@ -4,6 +4,7 @@ include(function.cmake)
 
 if(UNIX AND NOT APPLE)
 	set(CMAKE_CXX_COMPILER g++-11)
+	add_compile_options(-fmodules-ts)
 endif()
 
 project(CPPExperiments)

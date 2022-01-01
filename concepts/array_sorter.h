@@ -12,10 +12,13 @@ concept Sortable = requires(T a, T b) {
 };
 
 template <Sortable T, int n>
-consteval auto sort(const T(&arr)[n]) {
+consteval auto sort(const T(&&arr)[n]) {
+    static_assert(std::is_constant_evaluated());
+
     std::array<T, n> res;
     std::copy(std::begin(arr), std::end(arr), std::begin(res));
     std::sort(std::begin(res), std::end(res));
+
     return res;
 }
 
