@@ -7,5 +7,3 @@ file (GLOB HEADERS CONFIGURE_DEPENDS "*.h")
 
 add_executable(Concepts ${HEADERS} ${SOURCES})
 
-createSTDModules(${CMAKE_CURRENT_BINARY_DIR})
-

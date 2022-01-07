@@ -1,5 +1,5 @@
-#include <iostream>
-#include <coroutine>
+import <iostream>;
+import <coroutine>;
 
 // http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/n4861.pdf
 struct generator {

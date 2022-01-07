@@ -1,6 +1,6 @@
 import <iostream>;
 import <vector>;
-import <algorithm>;
+import <source_location>;
 
 class Data {
     int mI;
@@ -19,6 +19,11 @@ public:
 
 
 int main(int argc, char **argv) {
+
+    std::cout << std::source_location::current().file_name() << ":" << 
+                 std::source_location::current().line() << "(" << 
+                 std::source_location::current().function_name() << ")" << std::endl;
+
     std::vector ints = {Data{1}, Data{10}, Data{2}, Data{3}, Data{0}};
 
     std::sort(ints.begin(), ints.end());

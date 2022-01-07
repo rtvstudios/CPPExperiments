@@ -7,5 +7,6 @@ file (GLOB HEADERS CONFIGURE_DEPENDS "*.h")
 
 add_executable(Coroutine ${HEADERS} ${SOURCES})
 
-createSTDModules(${CMAKE_CURRENT_BINARY_DIR})
+createSTDModule(${CMAKE_CURRENT_BINARY_DIR} iostream)
+createSTDModule(${CMAKE_CURRENT_BINARY_DIR} coroutine)
 

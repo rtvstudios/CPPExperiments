@@ -6,5 +6,7 @@ file (GLOB HEADERS CONFIGURE_DEPENDS "*.h")
 
 add_executable(Module ${HEADERS} shape.cpp main.cpp)
 
-createSTDModules(${CMAKE_CURRENT_BINARY_DIR})
+createSTDModule(${CMAKE_CURRENT_BINARY_DIR} string)
+createSTDModule(${CMAKE_CURRENT_BINARY_DIR} memory)
+createSTDModule(${CMAKE_CURRENT_BINARY_DIR} iostream)
 
