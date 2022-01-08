@@ -3,9 +3,9 @@ import <vector>;
 import <ranges>;
 import <initializer_list>;
 import <iterator>;
-import iterator_example;
 
-//using namespace rtv;
+import iterator_example;
+import view_example;
 
 int main(int argc, char **argv) {
     auto even = [](int i) { return 0 == i % 2; };
@@ -25,6 +25,14 @@ int main(int argc, char **argv) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;
+
+    // view
+    for (auto i: odd_view<int>() |
+                 std::views::take(5)) {
+        std::cout << i << ' ';
+    }
+    std::cout << std::endl;
+
 
     return 0;
 }
