@@ -4,7 +4,11 @@ project(Module)
 
 file (GLOB HEADERS CONFIGURE_DEPENDS "*.h")
 
-add_executable(Module ${HEADERS} shape.cpp main.cpp)
+set(SOURCES
+    shape.cpp
+    main.cpp)
+
+add_executable(Module ${HEADERS} ${SOURCES})
 
 createSTDModule(${CMAKE_CURRENT_BINARY_DIR} string)
 createSTDModule(${CMAKE_CURRENT_BINARY_DIR} memory)

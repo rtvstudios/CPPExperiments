@@ -5,18 +5,17 @@ import <ranges>;
 
 export module view_example;
 
-export template<typename T>
 class odd_iterator {
 public:
     using difference_type = std::ptrdiff_t;
 
     odd_iterator() = default;
 
-    T& operator*() {
+    int& operator*() {
         return mVal;
     }
 
-    const T& operator*() const {
+    const int& operator*() const {
         return mVal;
     }
 
@@ -34,17 +33,16 @@ public:
     bool operator==(const odd_iterator&) const = default;
 
 private:
-    T mVal{1};
+    int mVal{1};
 };
 
 
-template<typename T>
-class odd_view_impl: public std::ranges::view_interface<odd_view_impl<T>> {
-    odd_iterator<T> mIter;
+class odd_view_impl: public std::ranges::view_interface<odd_view_impl> {
+    odd_iterator mIter;
 
 public:
     odd_view_impl() = default;
-    odd_view_impl(odd_iterator<T> iter) : mIter{std::move(iter)} {}
+    odd_view_impl(odd_iterator iter) : mIter{std::move(iter)} {}
 
     auto begin() {
         return mIter;
@@ -56,9 +54,8 @@ public:
 }; 
 
 struct odd_view_impl_fn {
-    template<typename T>
-    constexpr auto operator()() {
-        return odd_view_impl<T>();
+    constexpr auto operator()() const {
+        return odd_view_impl();
     }
 };
 

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-include(function.cmake)
+include(Utils.cmake)
 
 if(UNIX AND NOT APPLE)
 	set(CMAKE_CXX_COMPILER g++-11)

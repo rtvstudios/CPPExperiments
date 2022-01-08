@@ -27,8 +27,8 @@ int main(int argc, char **argv) {
     std::cout << std::endl;
 
     // view
-    for (auto i: odd_view<int>() |
-                 std::views::take(5)) {
+    for (auto i: odd_view()
+                 | std::views::take(10)) {
         std::cout << i << ' ';
     }
     std::cout << std::endl;
