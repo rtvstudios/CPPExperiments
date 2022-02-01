@@ -22,4 +22,5 @@ add_subdirectory(3-way)
 add_subdirectory(coroutine)
 add_subdirectory(module)
 add_subdirectory(ranges)
+add_subdirectory(meta-programming)
 
